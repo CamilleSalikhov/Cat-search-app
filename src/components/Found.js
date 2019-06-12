@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {FoundDiv} from '../styledComponents/elements'
 
 export default class Found extends Component {
     state = {
@@ -31,19 +32,13 @@ export default class Found extends Component {
     render() {
         
         return (
-            <div style={foundStyle}>
+            <FoundDiv>
                 found!
                 <h3>{this.props.breed.name}</h3>
                 <img src={this.state.imgLink} alt="cat" width='300px'></img>
                 <p>{this.props.breed.description}</p>
                 <Link to='/'><div onClick={this.props.resetFoundState}>back</div></Link>
-            </div>
+            </FoundDiv>
         )
     }
-}
-const foundStyle = {
-    display:'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-
 }

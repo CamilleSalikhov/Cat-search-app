@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import uuid from 'uuid'
+import uuid from 'uuid';
+import {SelectedCat} from '../styledComponents/elements'
 
 export default class SelectedCatPhotos extends Component {
     state = {
@@ -24,12 +25,13 @@ export default class SelectedCatPhotos extends Component {
     }
     render() {
         return ( 
-            <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+            <SelectedCat>
                 <h1>{this.props.selectedCat} page</h1>
-                <p>Не расстраивайтесь если страница пуста, в базе не так много фотографий форматов gif и png, жмите в поиске jpeg для большего количества фотографий!</p>
+                
                 <Link to='/'><div onClick={this.props.resetSelectState}>back</div></Link>
                 {this.state.photos.map(e => <img src={e.url} alt="cat" width='300px' key={uuid.v4()}></img>)}
-            </div>
+                <p>Не расстраивайтесь, если страница пуста, в базе не так много фотографий форматов gif и png. Жмите в поиске jpeg для большего количества фотографий!</p>
+            </SelectedCat>
         )
     }
 }
