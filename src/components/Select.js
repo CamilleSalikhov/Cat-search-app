@@ -12,7 +12,10 @@ export default class Select extends Component {
         return (
             <StyledForm>
                 <h3>Select a breed for more photos</h3>
-                <select name="catlist" onChange={this.props.handleCategories}>{selectOptions}</select>
+                <select defaultValue='DEFAULT' name="catlist" onChange={this.props.handleCategories}>
+                <option value='DEFAULT' disabled>Choose a breed ...</option>
+                {selectOptions}
+                </select>
                 <select name='typeList' onChange={this.props.handleType}>
                     <option value='jpg'>jpg</option>
                     <option value='gif'>gif</option>
