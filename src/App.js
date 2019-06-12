@@ -41,9 +41,9 @@ handleInputChange = (e) => {
 handleSearch = (event) => {
   let searchResult = this.state.breeds.find(e => e.name.toUpperCase() === this.state.searchInput.toUpperCase());
   if(searchResult) {
-    this.setState({searchStatus: 'found',foundBreed:searchResult});
+    this.setState({searchStatus: 'Found!',foundBreed:searchResult});
   } else {
-    this.setState({searchStatus: 'didnt found!'})
+    this.setState({searchStatus: 'Did not find!'})
   }
 
 }
