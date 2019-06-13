@@ -39,7 +39,6 @@ handleInputChange = (e) => {
 }
 
 handleSearch = (event) => {
-  console.log(this.state.searchInput.toUpperCase().trim().replace(/\s+/g, " "))
   let searchResult = this.state.breeds.find(e => e.name.toUpperCase() === this.state.searchInput.toUpperCase().trim().replace(/\s+/g, " "));
   if(searchResult) {
     this.setState({searchStatus: 'Found!',foundBreed:searchResult});
