@@ -30,7 +30,7 @@ padding:10px
 const SelectedCat = styled.div`
 display:flex;
 flex-direction:column;
-align-items:center
+align-items:center;
 `
 
 
